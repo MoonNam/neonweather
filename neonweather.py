@@ -3,6 +3,7 @@ import urllib.request
 from urllib.request import Request
 import discord
 import bs4
+import os
 
 client = discord.Client()
 
@@ -102,4 +103,5 @@ async def on_message(message, value=None):
     if message.content.startswith("/제작자"):
         await message.channel.send("제작자 : 문효찬#1973 (Nam & Don)")
 
-client.run("NjgyNDkyODYxNjkzODIxMDA5.XloaCg.N8gJ0l9gAet8GfnDSn4cFQ5trC0")
+access_token = os.environ["BOT_TOKEN"]
+client.run(access_token)
