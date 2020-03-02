@@ -98,10 +98,7 @@ async def on_message(message, value=None):
         embed.add_field(name='내일 오전날씨상태, 미세먼지 상태', value=tomorrowValue, inline=False)  # 내일오전 날씨상태
         embed.add_field(name='내일 오후온도', value=tomorrowAfterTemp + '˚', inline=False)  # 내일오후날씨
         embed.add_field(name='내일 오후날씨상태, 미세먼지 상태', value=tomorrowAfterValue, inline=False)  # 내일오후 날씨상태
-
         await message.channel.send(embed=embed)
-    if message.content.startswith("/제작자"):
-        await message.channel.send("제작자 : 문효찬#1973 (Nam & Don)")
 
 access_token = os.environ["BOT_TOKEN"]
 client.run(access_token)
