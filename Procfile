@@ -1,1 +1,1 @@
-worker: python neonweather.py
+worker: python neonct.py
