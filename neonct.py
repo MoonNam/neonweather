@@ -44,15 +44,16 @@ async def on_message(message):
         else:
             await message.channel.send("권한이 없습니다.")
 
-    if message.content.startswith("/퇴근"):
-        await message.channel.send(message.author.display_name +"님이 퇴근하셨습니다." + '\n\n' + (str(now.month) + "월 " + str(now.day) + "일 | " + str(now.hour) + "시" + str(now.minute) + "분"))
-
     if message.content.startswith("/출근"):
         now_time =(str(now.month) + "월 " + str(now.day) + "일 | " + str(now.hour) + "시" + str(now.minute) + "분")
     embed = discord.Embed(color=0xff0000)
     embed.add_field(name="네온 출석부", value=message.author.display_name + " 님이 출근하셨습니다.　　" + '\n\n' + now_time, inline=True)
     embed.set_thumbnail(url=message.author.avatar_url)
     await message.channel.send(embed=embed)
+    
+
+    if message.content.startswith("/퇴근"):
+        await message.channel.send(message.author.display_name +"님이 퇴근하셨습니다." + '\n\n' + (str(now.month) + "월 " + str(now.day) + "일 | " + str(now.hour) + "시" + str(now.minute) + "분"))
 
 access_token = os.environ["BOT_TOKEN"]
 client.run(access_token)
