@@ -17,14 +17,24 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
+    if message.content.startswith("/clear"):
+        a = message.author.top_role
+        if str(message.author.top_role) == "🍔인게임관리자🍔":
+            await message.channel.purge(limit=1000)
+        elif str(message.author.top_role) == "🍔인게임관리자🍔":
+            await message.channel.purge(limit=1000)
+        elif str(message.author.top_role) == "🍔인게임관리자🍔":
+            await message.channel.purge(limit=1000)
+        else:
+            await message.channel.send("권한이 없습니다.")
+
     if message.content.startswith("/퇴근"):
-        now_time1 =(str(now.month) + "월 " + str(now.day) + "일 | " + str(now.hour) + "시" + str(now.minute) + "분")
-    await message.channel.send("벌써 퇴근해?" + '\n' + now_time1)
+        await message.channel.send(message.author.display_name +"님이 퇴근하셨습니다." + '\n\n' + (str(now.month) + "월 " + str(now.day) + "일 | " + str(now.hour) + "시" + str(now.minute) + "분"))
 
     if message.content.startswith("/출근"):
         now_time =(str(now.month) + "월 " + str(now.day) + "일 | " + str(now.hour) + "시" + str(now.minute) + "분")
     embed = discord.Embed(color=0xff0000)
-    embed.add_field(name="네온 출석부", value=message.author.display_name + " 님이 출근 하셨습니다.　　" + '\n\n' + now_time, inline=True)
+    embed.add_field(name="네온 출석부", value=message.author.display_name + " 님이 출근하셨습니다.　　" + '\n\n' + now_time, inline=True)
     embed.set_thumbnail(url=message.author.avatar_url)
     await message.channel.send(embed=embed)
 
