@@ -45,7 +45,7 @@ async def on_message(message):
 
     if message.content.startswith("/출근"):
     embed = discord.Embed(color=0xff0000)
-    embed.add_field(name="네온 출석부", value=message.author.display_name + " 님이 출근하셨습니다.)
+    embed.add_field(name="네온 출석부", value=message.author.display_name + " 님이 출근하셨습니다.")
     embed.set_thumbnail(url=message.author.avatar_url)
     await message.channel.send(embed=embed)
     
